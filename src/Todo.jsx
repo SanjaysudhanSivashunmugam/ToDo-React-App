@@ -7,8 +7,11 @@ function Todo(){
 
     }
     function addTask(){
-        setTask(t => [...t, newTask]);
-        setNewTask("");
+        if(newTask !== ""){
+            setTask(t => [...t, newTask]);
+            setNewTask("");
+
+        }
     }
     function deleteTask(index){
         const updateTask = task.filter((element,i) => i!==index);
